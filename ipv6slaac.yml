@@ -9,7 +9,7 @@ topology:
       exec:
       - ip -6 route del default dev eth0
 
-     router1:
+   router1:
       kind: linux
       image: quay.io/frrouting/frr:8.4.1
       binds:     #trae archivos externos
@@ -18,7 +18,7 @@ topology:
       exec:
        - "sysctl -w net.ipv6.conf.all.forwarding=1"
 
-      router2:
+   router2:
       kind: linux
       image: quay.io/frrouting/frr:8.4.1
       binds:     #trae archivos externos
@@ -31,7 +31,7 @@ topology:
 
   
     
-      PC2:
+   PC2:
       kind: linux
       image: docker.io/esanchezv/kaliipv6v2:latest
       exec:
